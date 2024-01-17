@@ -24,4 +24,5 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', \App\Livewire\Pages\Dashboard::class)->name('dashboard');
+    Route::get('/formulir-aduan', \App\Livewire\Pages\FormulirAduan::class)->name('formulir-aduan');
 });

@@ -21,12 +21,12 @@
             </li>
             <li class="menu-header">Aduan</li>
             <li
-                @if (request()->routeIs('dashboard'))
+                @if (request()->routeIs('formulir-aduan'))
                     class=active
                 @endif
             >
-                <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fas fa-fire"></i>
+                <a class="nav-link" href="{{ route('formulir-aduan') }}">
+                    <i class="fas fa-paper-plane"></i>
                     <span>Formulir Aduan</span>
                 </a>
             </li>
