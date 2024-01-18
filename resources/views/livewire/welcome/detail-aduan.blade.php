@@ -18,25 +18,19 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <!-- Post content-->
                     <article>
-                        <!-- Post header-->
                         <header class="mb-4">
-                            <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ $aduan->judul_keluhan }}!</h1>
-                            <!-- Post meta content-->
                             <div class="text-muted fst-italic mb-2">{{ $aduan->no_tracking }} - {{ Carbon\Carbon::create($aduan->created_at)->translatedFormat('j F Y, H:i') }} WIB</div>
-                            <!-- Post categories-->
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ $aduan->kategori }}</a>
                             <a class="badge bg-primary text-decoration-none link-light" href="#!">{{ $aduan->status }}</a>
                         </header>
-                        <!-- Post content-->
                         <section class="mb-5">
-                            <p>{{ $aduan->keluhan }}</p>
+                            {!! $aduan->keluhan !!}
+                            <img class="img-fluid rounded-3 my-5" style="width: 150px" src="{{ asset('storage/'.$aduan->photo) }}" alt="..." />
                         </section>
                     </article>
                     @if (count($aduan->respon) !== 0)
-                        <!-- Comments section-->
                         <section>
                             <div class="card bg-light">
                                 <div class="card-body">

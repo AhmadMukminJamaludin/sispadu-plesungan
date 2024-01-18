@@ -12,7 +12,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form wire:submit.prevent="submit">
+                        <form wire:submit.prevent="submit" wire:ignore>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Judul Keluhan</label>
                                 <div class="col-sm-12 col-md-7">
@@ -22,17 +22,18 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Kategori</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <select class="form-control selectric" wire:model="form.kategori">
-                                        <option>Tech</option>
-                                        <option>News</option>
-                                        <option>Political</option>
+                                    <select class="form-control" wire:model="form.kategori">
+                                        <option value="">Pilih Kategori</option>
+                                        @foreach ($listKategori as $item)
+                                            <option value="{{ $item }}">{{ $item }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi Keluhan</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea class="summernote-simple" wire:model="form.keluhan"></textarea>
+                                    <textarea class="form-control" id="summernote"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
@@ -40,7 +41,7 @@
                                 <div class="col-sm-12 col-md-7">
                                     <div id="image-preview" class="image-preview">
                                         <label for="image-upload" id="image-label">Choose File</label>
-                                        <input type="file" name="image" wire:model="form.photo" id="image-upload" />
+                                        <input type="file" name="image" wire:model="photo" id="image-upload" />
                                     </div>
                                 </div>
                             </div>
@@ -57,3 +58,35 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            tabsize: 2,
+            height: 200,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+            ],
+            callbacks: {
+                    onChange: function(contents, $editable) {
+                        @this.set('form.keluhan', contents);
+                }
+            }
+        });
+    });
+    $.uploadPreview({
+        input_field: "#image-upload",   // Default: .image-upload
+        preview_box: "#image-preview",  // Default: .image-preview
+        label_field: "#image-label",    // Default: .image-label
+        label_default: "Choose File",   // Default: Choose File
+        label_selected: "Change File",  // Default: Change File
+        no_label: false,                // Default: false
+        success_callback: null          // Default: null
+    });
+</script>
+@endpush

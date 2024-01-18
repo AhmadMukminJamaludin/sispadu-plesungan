@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Pages;
 
+use App\Models\Aduan;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -13,23 +14,69 @@ class FormulirAduan extends Component
         'judul_keluhan' => '',
         'kategori' => '',
         'keluhan' => '',
-        'photo' => '',
     ];
 
-    protected $rules = [
-        'form.judul_keluhan' => 'required',
-        'form.kategori' => 'required',
-        'form.keluhan' => 'required',
-        'form.photo' => 'nullable',
-    ];
+    public $photo;
 
-    public function submit() 
+    public function rules()
     {
-        dd($this->form);
+        return [
+            'form.judul_keluhan' => 'required',
+            'form.kategori' => 'required',
+            'form.keluhan' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'form.judul_keluhan.required' => ':attribute harus diisi!',
+            'form.kategori.required' => ':attribute harus diisi!',
+            'form.keluhan.required' => ':attribute harus diisi!',
+        ];
+    }
+
+    public function validationAttributes()
+    {
+        return [
+            'form.judul_keluhan' => 'Judul Keluhan',
+            'form.kategori' => 'Kategori',
+            'form.keluhan' => 'Keluhan',
+        ];
+    }
+
+    public function submit()
+    {
+        try {
+            $this->validate();
+            if ($this->photo) {
+                $path = $this->photo->storePublicly('publi/berkas-aduan', 'public');
+                $this->form['photo'] = $path;
+            }
+            $aduan = Aduan::create($this->form);
+            $this->photo = null;
+            $this->form = [
+                'judul_keluhan' => '',
+                'kategori' => '',
+                'keluhan' => '',
+            ];
+            $this->dispatch('alert-success', 'Berhasil Disimpan!');
+        } catch (\Throwable $th) {
+            $this->dispatch('alert-error', $th->getMessage());
+        }
     }
 
     public function render()
     {
-        return view('livewire.pages.formulir-aduan')->layout('layouts.stisla');
+        return view('livewire.pages.formulir-aduan', [
+            'listKategori' => [
+                'Infrastruktur' => 'Infrastruktur',
+                'Pelayanan Publik' => 'Pelayanan Publik',
+                'Keamanan dan Ketertiban' => 'Keamanan dan Ketertiban',
+                'Administrasi' => 'Administrasi',
+                'Kesejahteraan Masyarakat' => 'Kesejahteraan Masyarakat',
+                'Fasilitas Umum' => 'Fasilitas Umum',
+            ]
+        ])->layout('layouts.stisla');
     }
 }

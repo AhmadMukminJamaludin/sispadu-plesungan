@@ -48,6 +48,16 @@
             >
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fire"></i>
+                    <span>Data Aduan</span>
+                </a>
+            </li>
+            <li
+                @if (request()->routeIs('dashboard'))
+                    class=active
+                @endif
+            >
+                <a class="nav-link" href="{{ route('dashboard') }}">
+                    <i class="fas fa-fire"></i>
                     <span>Data Pengguna</span>
                 </a>
             </li>

@@ -10,9 +10,10 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset("stisla/modules/bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ asset("stisla/modules/fontawesome/css/all.min.css") }}">
-    
+
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="{{ asset("stisla/modules/summernote/summernote-bs4.css") }}">
+    <link rel="stylesheet" href="{{ asset("stisla/modules/izitoast/css/iziToast.min.css") }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset("stisla/css/style.css") }}">
@@ -24,6 +25,12 @@
         gtag('js', new Date());
         gtag('config', 'UA-94034622-3');
     </script>
+    <!-- Scripts -->
+    @vite(['resources/js/app.js'])
+    @stack('styles')
+
+    <!-- Styles -->
+    @livewireStyles
 </head>
 
 <body>
@@ -91,11 +98,18 @@
     <script src="{{ asset("stisla/js/stisla.js") }}"></script>
 
     <!-- JS Libraies -->
+    <script src="{{ asset('stisla/modules/izitoast/js/iziToast.min.js') }}"></script>
+    <script src="{{ asset('stisla/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+    <script src="{{ asset('stisla/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
+
 
     <!-- Page Specific JS File -->
+    @stack('modals')
+    @stack('scripts')
+
+    @livewireScripts
 
     <!-- Template JS File -->
     <script src="{{ asset("stisla/js/scripts.js") }}"></script>
-    <script src="assets/js/custom.js"></script>
 </body>
 </html>
