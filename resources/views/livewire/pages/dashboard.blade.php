@@ -9,7 +9,7 @@
                     <h2>Selamat Datang, {{ Auth::user()->name }}!</h2>
                     <p class="lead">Sistem Pengaduan Masyarakat Desa Plesungan adalah platform modern yang memudahkan warga untuk menyampaikan keluhan dan masukan secara efisien!</p>
                     <div class="mt-4">
-                        <a href="#" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-paper-plane mr-2"></i> Buat Aduan!</a>
+                        <a href="{{ route('formulir-aduan') }}" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-paper-plane mr-2"></i> Buat Aduan!</a>
                     </div>
                 </div>
             </div>

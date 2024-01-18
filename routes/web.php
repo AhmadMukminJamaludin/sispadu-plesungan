@@ -25,4 +25,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', \App\Livewire\Pages\Dashboard::class)->name('dashboard');
     Route::get('/formulir-aduan', \App\Livewire\Pages\FormulirAduan::class)->name('formulir-aduan');
+    Route::get('/daftar-aduan', \App\Livewire\Pages\DaftarAduan::class)->name('daftar-aduan');
+    Route::get('/detail-aduan/{noTracking}', \App\Livewire\Pages\DetailAduan::class)->name('detail-aduan');
 });
