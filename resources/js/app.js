@@ -6,6 +6,7 @@ Livewire.on("alert-success", message => {
         message: message,
         position: 'topCenter'
     });
+    $('#summernote').summernote("reset")
 })
 
 Livewire.on("alert-error", message => {

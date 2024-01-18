@@ -7,7 +7,7 @@
                         <div class="card h-100 shadow border-0">
                             <div class="card-body p-4">
                                 <div class="badge bg-primary bg-gradient rounded-pill mb-2">{{ ($item->responLatest) ? $item->responLatest->status_respon : "Diterima" }}</div>
-                                <a class="text-decoration-none link-dark stretched-link" href="{{ url("/detail-aduan/{$item->no_tracking}") }}"><div class="h5 card-title mb-3">{{ $item->judul_keluhan }}</div></a>
+                                <a class="text-decoration-none link-dark stretched-link" href="{{ route('welcome.detail-aduan', ['noTracking' => $item->no_tracking]) }}"><div class="h5 card-title mb-3">{{ $item->judul_keluhan }}</div></a>
                                 <p class="card-text mb-0">{!! Str::limit($item->keluhan, 250, '...') !!}</p>
                             </div>
                             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">

@@ -24,7 +24,7 @@
                     @forelse ($aduan as $item)
                     <div class="mb-5">
                         <div class="small">{{ $item->createdBy->name }} - {{ Carbon\Carbon::create($item->created_at)->translatedFormat('j F Y, H:i') }} WIB</div>
-                        <a class="link-dark" href="{{ url("/detail-aduan/{$item->no_tracking}") }}"><h3>{{ $item->judul_keluhan }}</h3></a>
+                        <a class="link-dark" href="{{ route('welcome.detail-aduan', ['noTracking' => $item->no_tracking]) }}"><h3>{{ $item->judul_keluhan }}</h3></a>
                         <div class="small text-muted">{!! Str::limit($item->keluhan, 250, '...') !!}</div>
                     </div>
                     @empty

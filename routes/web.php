@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Livewire\Welcome\Home::class);
-Route::get('/daftar-aduan', \App\Livewire\Welcome\DaftarAduan::class)->name('welcome.daftar-aduan');
-Route::get('/profile', \App\Livewire\Welcome\Profile::class)->name('welcome.profile');
-Route::get('/detail-aduan/{noTracking}', \App\Livewire\Welcome\DetailAduan::class);
+
+Route::prefix('guest')->group(function () {
+    Route::name('welcome.')->group(function () {
+        Route::get('/daftar-aduan', \App\Livewire\Welcome\DaftarAduan::class)->name('daftar-aduan');
+        Route::get('/profile', \App\Livewire\Welcome\Profile::class)->name('profile');
+        Route::get('/detail-aduan/{noTracking}', \App\Livewire\Welcome\DetailAduan::class)->name('detail-aduan');
+    });
+});
 
 Route::middleware([
     'auth:sanctum',

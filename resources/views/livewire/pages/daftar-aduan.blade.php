@@ -17,8 +17,8 @@
                     </div>
                     <div class="article-details">
                         <div class="article-category">
-                            <a type="button">{{ $item->kategori }}</a> 
-                            <div class="bullet"></div> 
+                            <a type="button">{{ $item->kategori }}</a>
+                            <div class="bullet"></div>
                             <a type="button">{{ \Carbon\Carbon::create($item->created_at)->translatedFormat('j F Y H:i') }}</a>
                         </div>
                         <div class="article-title">
