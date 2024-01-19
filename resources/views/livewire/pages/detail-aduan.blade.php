@@ -55,8 +55,9 @@
                                                 <div class="media-right"><div class="text-primary">{{ $respon->status_respon }}</div></div>
                                                 <div class="media-title mb-1">{{ $respon->createdBy->name }}</div>
                                                 <div class="text-time">{{ \Carbon\Carbon::create($respon->created_at)->translatedFormat('j F Y H:i') }}</div>
-                                                @if (auth()->user()->hasRole('admin'))
-                                                    @if ($respon->is($responSelected))
+
+                                                @if ($respon->is($responSelected))
+                                                    @if (auth()->user()->hasRole('admin'))
                                                         <form wire:submit.prevent="submitRespon">
                                                             <div class="form-group">
                                                                 <select class="form-control" wire:model="formRespon.status_respon" disabled>
@@ -78,11 +79,11 @@
                                                                 </button>
                                                             </div>
                                                         </form>
-                                                    @else
-                                                        <div class="media-description text-muted">
-                                                            {{ $respon->respon_text }}
-                                                        </div>
                                                     @endif
+                                                @else
+                                                    <div class="media-description text-muted">
+                                                        {{ $respon->respon_text }}
+                                                    </div>
                                                 @endif
 
                                                 @if (auth()->user()->hasRole('admin'))

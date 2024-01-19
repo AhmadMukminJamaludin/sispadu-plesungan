@@ -40,38 +40,40 @@
                     <span>Daftar Aduan</span>
                 </a>
             </li>
-            <li class="menu-header">Laporan</li>
-            <li
-                @if (request()->routeIs('dashboard'))
-                    class=active
-                @endif
-            >
-                <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fas fa-envelope"></i>
-                    <span>Laporan Aduan</span>
-                </a>
-            </li>
-            <li class="menu-header">Manajemen Data</li>
-            <li
-                @if (request()->routeIs('dashboard'))
-                    class=active
-                @endif
-            >
-                <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fas fa-envelope"></i>
-                    <span>Data Aduan</span>
-                </a>
-            </li>
-            <li
-                @if (request()->routeIs('dashboard'))
-                    class=active
-                @endif
-            >
-                <a class="nav-link" href="{{ route('dashboard') }}">
-                    <i class="fas fa-users"></i>
-                    <span>Data Pengguna</span>
-                </a>
-            </li>
+            @if (auth()->user()->hasRole('admin'))
+                <li class="menu-header">Laporan</li>
+                <li
+                    @if (request()->routeIs('laporan-aduan'))
+                        class=active
+                    @endif
+                >
+                    <a class="nav-link" href="{{ route('laporan-aduan') }}">
+                        <i class="fas fa-envelope"></i>
+                        <span>Laporan Aduan</span>
+                    </a>
+                </li>
+                {{-- <li class="menu-header">Manajemen Data</li>
+                <li
+                    @if (request()->routeIs('dashboard'))
+                        class=active
+                    @endif
+                >
+                    <a class="nav-link" href="{{ route('dashboard') }}">
+                        <i class="fas fa-envelope"></i>
+                        <span>Data Aduan</span>
+                    </a>
+                </li>
+                <li
+                    @if (request()->routeIs('dashboard'))
+                        class=active
+                    @endif
+                >
+                    <a class="nav-link" href="{{ route('dashboard') }}">
+                        <i class="fas fa-users"></i>
+                        <span>Data Pengguna</span>
+                    </a>
+                </li> --}}
+            @endif
         </ul>
     </aside>
 </div>
