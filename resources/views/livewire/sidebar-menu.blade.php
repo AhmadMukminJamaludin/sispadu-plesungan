@@ -19,6 +19,16 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li
+                @if (request()->routeIs('profile-user'))
+                    class=active
+                @endif
+            >
+                <a class="nav-link" href="{{ route('profile-user') }}">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
             <li class="menu-header">Aduan</li>
             <li
                 @if (request()->routeIs('formulir-aduan'))
@@ -52,27 +62,17 @@
                         <span>Laporan Aduan</span>
                     </a>
                 </li>
-                {{-- <li class="menu-header">Manajemen Data</li>
+                <li class="menu-header">Manajemen Data</li>
                 <li
-                    @if (request()->routeIs('dashboard'))
+                    @if (request()->routeIs('data-pengguna'))
                         class=active
                     @endif
                 >
-                    <a class="nav-link" href="{{ route('dashboard') }}">
-                        <i class="fas fa-envelope"></i>
-                        <span>Data Aduan</span>
-                    </a>
-                </li>
-                <li
-                    @if (request()->routeIs('dashboard'))
-                        class=active
-                    @endif
-                >
-                    <a class="nav-link" href="{{ route('dashboard') }}">
+                    <a class="nav-link" href="{{ route('data-pengguna') }}">
                         <i class="fas fa-users"></i>
                         <span>Data Pengguna</span>
                     </a>
-                </li> --}}
+                </li>
             @endif
         </ul>
     </aside>

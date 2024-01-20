@@ -50,7 +50,7 @@ class FormulirAduan extends Component
         try {
             $this->validate();
             if ($this->photo) {
-                $path = $this->photo->storePublicly('publi/berkas-aduan', 'public');
+                $path = $this->photo->storePublicly('public/berkas-aduan', 'public');
                 $this->form['photo'] = $path;
             }
             $aduan = Aduan::create($this->form);

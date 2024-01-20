@@ -34,4 +34,6 @@ Route::middleware([
     Route::get('/detail-aduan/{noTracking}', \App\Livewire\Pages\DetailAduan::class)->name('detail-aduan');
     Route::get('/laporan-aduan', \App\Livewire\Pages\LaporanAduan::class)->name('laporan-aduan');
     Route::get('/cetak-laporan', [\App\Http\Controllers\Cetak::class, 'index'])->name('cetak-laporan');
+    Route::get('/profile-user', \App\Livewire\Pages\Profile::class)->name('profile-user');
+    Route::get('/data-pengguna', \App\Livewire\Pages\DataPengguna::class)->name('data-pengguna');
 });

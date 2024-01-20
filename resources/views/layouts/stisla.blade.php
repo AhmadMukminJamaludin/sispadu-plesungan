@@ -50,7 +50,7 @@
                         <img class="rounded-circle mr-2" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                         <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="features-profile.html" class="dropdown-item has-icon">
+                            <a href="{{ route('profile-user') }}" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
                             </a>
                             <div class="dropdown-divider"></div>

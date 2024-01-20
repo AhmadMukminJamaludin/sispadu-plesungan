@@ -41,7 +41,7 @@
                             <div class="ticket-description">
                                 <p>{!! $aduan->keluhan !!}</p>
 
-                                <div class="gallery gallery-md">
+                                <div class="gallery gallery-md" wire:ignore>
                                     <div class="gallery-item" data-image="{{ asset('storage/'.$aduan->photo) }}" data-title="Image 1"></div>
                                 </div>
 

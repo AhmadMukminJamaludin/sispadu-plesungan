@@ -11,7 +11,7 @@
                         <input type="text" name="search" class="form-control" x-model="no_tracking" wire:model.live="no_tracking" placeholder="Cari no. tracking...">
                     </form>
                     <div class="card-header-action">
-                        <button class="btn btn-primary" type="button" x-on:click="cetak()"><i class="fas fa-print mr-2"></i>Download</button>
+                        <button class="btn btn-primary" type="button" x-on:click="cetak()"><i class="fas fa-print mr-2"></i>Cetak</button>
                     </div>
                 </div>
                 <div class="card-body">
