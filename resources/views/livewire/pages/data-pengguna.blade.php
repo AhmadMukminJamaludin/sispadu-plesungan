@@ -36,7 +36,8 @@
                                                 Aksi
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Ubah password</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-password" wire:click="getUser({{ $user->id }})" role="button">Ubah password</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-role" wire:click="getUser({{ $user->id }})" role="button">Ubah Role</a>
                                             </div>
                                         </div>
                                     </td>
@@ -65,3 +66,8 @@
         </div>
     </div>
 </div>
+@push('modals')
+    <livewire:modals.update-password />
+    <livewire:modals.update-role />
+@endpush
+
