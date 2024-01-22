@@ -103,6 +103,7 @@
     <script src="{{ asset('stisla/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('stisla/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
     <script src="{{ asset('stisla/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
+    <script src="{{ asset('stisla/modules/chart.min.js') }}"></script>
 
 
     <!-- Page Specific JS File -->
