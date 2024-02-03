@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset("stisla/modules/summernote/summernote-bs4.css") }}">
     <link rel="stylesheet" href="{{ asset("stisla/modules/chocolat/dist/css/chocolat.css") }}">
     <link rel="stylesheet" href="{{ asset("stisla/modules/izitoast/css/iziToast.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("stisla/modules/bootstrap-daterangepicker/daterangepicker.css") }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset("stisla/css/style.css") }}">
@@ -104,6 +105,7 @@
     <script src="{{ asset('stisla/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
     <script src="{{ asset('stisla/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
     <script src="{{ asset('stisla/modules/chart.min.js') }}"></script>
+    <script src="{{ asset('stisla/modules/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
 
     <!-- Page Specific JS File -->

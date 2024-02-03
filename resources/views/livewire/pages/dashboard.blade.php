@@ -94,54 +94,34 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
-            <div class="card">
-                <div class="card-header">
-                    <h4>Aduan terbaru</h4>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled list-unstyled-border">
-                        <li class="media">
-                            <img class="mr-3 rounded-circle" width="50" src="{{ asset('stisla/img/avatar/avatar-1.png') }}" alt="avatar">
-                            <div class="media-body">
-                                <div class="float-right text-primary">Now</div>
-                                <div class="media-title">Farhan A Mujib</div>
-                                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img class="mr-3 rounded-circle" width="50" src="{{ asset('stisla/img/avatar/avatar-1.png') }}" alt="avatar">
-                            <div class="media-body">
-                                <div class="float-right text-primary">Now</div>
-                                <div class="media-title">Farhan A Mujib</div>
-                                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img class="mr-3 rounded-circle" width="50" src="{{ asset('stisla/img/avatar/avatar-1.png') }}" alt="avatar">
-                            <div class="media-body">
-                                <div class="float-right text-primary">Now</div>
-                                <div class="media-title">Farhan A Mujib</div>
-                                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <img class="mr-3 rounded-circle" width="50" src="{{ asset('stisla/img/avatar/avatar-1.png') }}" alt="avatar">
-                            <div class="media-body">
-                                <div class="float-right text-primary">Now</div>
-                                <div class="media-title">Farhan A Mujib</div>
-                                <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="text-center pt-1 pb-1">
-                        <a href="#" class="btn btn-primary btn-lg btn-round">
-                            View All
-                        </a>
+        @if (count($aduanTerbaru) !== 0)
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Aduan terbaru</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled list-unstyled-border">
+                            @foreach ($aduanTerbaru as $item)
+                                <li class="media">
+                                    <img class="mr-3 rounded-circle" width="50" src="{{ asset('stisla/img/avatar/avatar-1.png') }}" alt="avatar">
+                                    <div class="media-body">
+                                        <div class="float-right text-warning">Belum Ada Respon</div>
+                                        <a href="{{ route('detail-aduan', ['noTracking' => $item->no_tracking]) }}" class="media-title">{{ $item->judul_keluhan }}</a>
+                                        <div class="text-small text-muted">{{ $item->createdBy->name }} - {{ \Carbon\Carbon::create($item->created_at)->translatedFormat('j F Y H:i') }}</div>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="text-center pt-1 pb-1">
+                            <a href="#" class="btn btn-primary btn-lg btn-round">
+                                View All
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
     @endif
 </div>

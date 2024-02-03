@@ -17,11 +17,16 @@ class Dashboard extends Component
             ->get();
             return count($total);
         };
+        $aduanTerbaru = Aduan::query()
+            ->doesntHave('respon')
+            ->latest()
+            ->get();
         return view('livewire.pages.dashboard', [
             'totalAduan' => count(Aduan::all()),
             'totalProses' => countAduan('Proses'),
             'totalSelesai' => countAduan('Selesai'),
             'totalTolak' => countAduan('Ditolak'),
+            'aduanTerbaru' => $aduanTerbaru
         ])->layout('layouts.stisla');
     }
 }

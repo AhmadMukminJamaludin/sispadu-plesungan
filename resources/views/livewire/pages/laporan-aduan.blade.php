@@ -7,8 +7,9 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Semua Aduan</h4>
-                    <form class="card-header-form mr-2">
-                        <input type="text" name="search" class="form-control" x-model="no_tracking" wire:model.live="no_tracking" placeholder="Cari no. tracking...">
+                    <form class="card-header-form mr-2 d-flex">
+                        <input type="text" name="search" class="form-control mr-2" x-model="no_tracking" wire:model.live="no_tracking" placeholder="Cari no. tracking...">
+                        <input type="text" name="search" class="form-control daterange-cus" wire:model.live="tanggalAwal" placeholder="Cari tanggal aduan...">
                     </form>
                     <div class="card-header-action">
                         <button class="btn btn-primary" type="button" x-on:click="cetak()"><i class="fas fa-print mr-2"></i>Cetak</button>
@@ -88,12 +89,32 @@
 
 @push('scripts')
 <script>
+    $('.daterange-cus').daterangepicker({
+        locale: {format: 'YYYY-MM-DD'},
+        drops: 'down',
+        opens: 'left',
+        alwaysShowCalendars: true,
+        ranges: {
+            'Hari ini': [moment(), moment()],
+            'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            '7 Hari terakhir': [moment().subtract(6, 'days'), moment()],
+            '30 Hari terakhir': [moment().subtract(29, 'days'), moment()],
+            'Bulan ini': [moment().startOf('month'), moment().endOf('month')],
+            'Bulan lalu': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+    });
+    $('.daterange-cus').on('apply.daterangepicker', function(ev, picker) {
+        @this.set('tanggal_awal', picker.startDate.format('YYYY-MM-DD'));
+        @this.set('tanggal_akhir', picker.endDate.format('YYYY-MM-DD'));
+    });
     function laporan() {
         return {
             no_tracking: '',
+            tanggal_awal: @entangle('tanggal_awal'),
+            tanggal_akhir: @entangle('tanggal_akhir'),
             nama: '',
             cetak() {
-                let url = `/cetak-laporan?no_tracking=${this.no_tracking}&nama=${this.nama}`;
+                let url = `/cetak-laporan?no_tracking=${this.no_tracking}&nama=${this.nama}&tanggal_awal=${this.tanggal_awal}&tanggal_akhir=${this.tanggal_akhir}`;
                 let height = 1000;
                 let width = 800;
                 var left = ( screen.width - width ) / 2;
@@ -104,3 +125,4 @@
     }
 </script>
 @endpush
+

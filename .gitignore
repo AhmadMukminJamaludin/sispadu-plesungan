@@ -17,3 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+composer.lock
+vite.config.js.timestamp-1705770487432-cd0c8d5979b3c.mjs
