@@ -41,7 +41,11 @@
                                     </td>
                                     <td>{{ \Carbon\Carbon::create($item->created_at)->translatedFormat('j F Y H:i') }}</td>
                                     <td class="text-center">
+                                        @if ($item->status == 'Diterbitkan')
                                         <div class="badge badge-primary">{{ $item->status }}</div>
+                                        @else
+                                        <div class="badge badge-warning">{{ $item->status }}</div>                                            
+                                        @endif
                                     </td>
                                     <td class="text-center" style="width: 75px;">
                                         <div class="dropdown d-inline mr-2">
@@ -49,8 +53,9 @@
                                                 Aksi
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-password" wire:click="edit({{ $item->id }})" role="button">Ubah kegiatan</a>
-                                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-role" wire:click="edit({{ $item->id }})" role="button">Ubah publikasi</a>
+                                                <a class="dropdown-item" data-toggle="modal" wire:click="edit({{ $item->id }})" role="button">Ubah kegiatan</a>
+                                                <a class="dropdown-item" data-toggle="modal" wire:click="delete({{ $item->id }})" role="button">Hapus kegiatan</a>
+                                                <a class="dropdown-item" data-toggle="modal" data-target="#modal-publikasi" wire:click="getKegiatan({{ $item->id }})" role="button">Ubah publikasi</a>
                                             </div>
                                         </div>
                                     </td>
@@ -79,3 +84,6 @@
         </div>
     </div>
 </div>
+@push('modals')
+    <livewire:modals.update-publikasi />
+@endpush

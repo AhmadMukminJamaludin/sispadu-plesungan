@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages;
 
 use App\Models\Kegiatan;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -45,6 +46,24 @@ class FormulirKegiatan extends Component
         ];
     }
 
+    #[Url] 
+    public $params_kegiatan = '';
+
+    public ?Kegiatan $kegiatan;
+
+    public function mount(Kegiatan $kegiatan)
+    {
+        if($this->params_kegiatan) {
+            $this->kegiatan = Kegiatan::find($this->params_kegiatan);
+            $this->form['id'] = $this->kegiatan['id'];
+            $this->form['judul_kegiatan'] = $this->kegiatan['judul_kegiatan'];
+            $this->form['kategori'] = $this->kegiatan['kategori'];
+            $this->form['deskripsi'] = $this->kegiatan['deskripsi'];
+        } else {
+            $this->kegiatan = $kegiatan;
+        };
+    }
+
     public function submit()
     {
         try {
@@ -53,7 +72,11 @@ class FormulirKegiatan extends Component
                 $path = $this->photo->storePublicly('berkas-kegiatan', 'public');
                 $this->form['photo'] = $path;
             }
-            $kegiatan = Kegiatan::create($this->form);
+            if ($this->kegiatan->id) {
+                $this->kegiatan->update($this->form);
+            } else {
+                $this->kegiatan->create($this->form);
+            }            
             $this->photo = null;
             $this->form = [
                 'judul_kegiatan' => '',

@@ -9,6 +9,21 @@ class DaftarKegiatan extends Component
 {
     public string $nama = '';
 
+    public function edit(Kegiatan $kegiatan)
+    {
+        $this->redirectRoute('formulir-kegiatan', ['params_kegiatan' => $kegiatan]);
+    }
+
+    public function getKegiatan(Kegiatan $kegiatan)
+    {
+        $this->dispatch('selected', $kegiatan->id);
+    }
+
+    public function delete(Kegiatan $kegiatan)
+    {
+        $kegiatan->delete();
+    }
+
     public function render()
     {
         return view('livewire.pages.daftar-kegiatan', [
