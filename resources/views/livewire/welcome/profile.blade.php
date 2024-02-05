@@ -28,7 +28,7 @@
                 <div class="col-lg-8 col-xxl-10">
                     <div class="text-center my-5">
                         <h1 class="fw-bolder mb-3">MBANGUN DESO DESAKU MAJU</h1>
-                        <p class="lead fw-normal text-muted mb-4">Rumusan Visi tersebut merupakan suatu ungkapan dari suatu niat yang luhur untuk memperbaiki dalam Penyelenggaraan
+                        <p class="lead fw-normal text-muted mb-4">Visi suatu ungkapan dari suatu niat yang luhur untuk memperbaiki dalam Penyelenggaraan
                             Pemerintahan dan Pelaksanaan Pembangunan di Desa Plesungan baik secara individu maupun kelembagaan sehingga 6 (enam) tahun ke depan Desa Plesungan mengalami suatu perubahan yang lebih baik dan peningkatan kesejahteraan masyarakat dilihat dari segi ekonomi dengan dilandasi semangat kebersamaan dalam Penyelenggaraan
                             Pemerintahan dan Pelaksanaan Pembangunan.</p>
                     </div>
