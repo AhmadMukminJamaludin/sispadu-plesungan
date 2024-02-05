@@ -51,6 +51,27 @@
                 </a>
             </li>
             @if (auth()->user()->hasRole('admin'))
+                <li class="menu-header">Kegiatan</li>
+                <li
+                    @if (request()->routeIs('formulir-kegiatan'))
+                        class=active
+                    @endif
+                >
+                    <a class="nav-link" href="{{ route('formulir-kegiatan') }}">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Formulir Kegiatan</span>
+                    </a>
+                </li>
+                <li
+                    @if (request()->routeIs('daftar-kegiatan'))
+                        class=active
+                    @endif
+                >
+                    <a class="nav-link" href="{{ route('daftar-kegiatan') }}">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <span>Daftar Kegiatan</span>
+                    </a>
+                </li>
                 <li class="menu-header">Laporan</li>
                 <li
                     @if (request()->routeIs('laporan-aduan'))

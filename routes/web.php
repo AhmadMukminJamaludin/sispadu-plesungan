@@ -36,4 +36,6 @@ Route::middleware([
     Route::get('/cetak-laporan', [\App\Http\Controllers\Cetak::class, 'index'])->name('cetak-laporan');
     Route::get('/profile-user', \App\Livewire\Pages\Profile::class)->name('profile-user');
     Route::get('/data-pengguna', \App\Livewire\Pages\DataPengguna::class)->name('data-pengguna');
+    Route::get('/formulir-kegiatan', \App\Livewire\Pages\FormulirKegiatan::class)->name('formulir-kegiatan');
+    Route::get('/daftar-kegiatan', \App\Livewire\Pages\DaftarKegiatan::class)->name('daftar-kegiatan');
 });
