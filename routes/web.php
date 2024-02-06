@@ -19,7 +19,9 @@ Route::prefix('guest')->group(function () {
     Route::name('welcome.')->group(function () {
         Route::get('/daftar-aduan', \App\Livewire\Welcome\DaftarAduan::class)->name('daftar-aduan');
         Route::get('/profile', \App\Livewire\Welcome\Profile::class)->name('profile');
+        Route::get('/kegiatan', \App\Livewire\Welcome\Kegiatan::class)->name('kegiatan');
         Route::get('/detail-aduan/{noTracking}', \App\Livewire\Welcome\DetailAduan::class)->name('detail-aduan');
+        Route::get('/detail-kegiatan/{slug}', \App\Livewire\Welcome\DetailKegiatan::class)->name('detail-kegiatan');
     });
 });
 
