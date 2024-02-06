@@ -25,6 +25,7 @@ class Dashboard extends Component
         return view('livewire.pages.dashboard', [
             'totalAduan' => count(Aduan::all()),
             'totalProses' => countAduan('Proses'),
+            'totalPengerjaan' => countAduan('Pengerjaan'),
             'totalSelesai' => countAduan('Selesai'),
             'totalTolak' => countAduan('Ditolak'),
             'aduanTerbaru' => $aduanTerbaru
