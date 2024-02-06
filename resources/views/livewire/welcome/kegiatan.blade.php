@@ -1,4 +1,5 @@
 <div>
+    @if ($kegiatan)
     <section class="py-5 bg-light">
         <div class="container px-5">
             <h1 class="fw-bolder fs-5 mb-4">Kegiatan Terbaru</h1>
@@ -22,12 +23,15 @@
             </div>
         </div>
     </section>
-    <!-- Blog preview section-->
+    @endif
+
+    @if (count($semuaKegiatan) !== 0)
+        <!-- Blog preview section-->
     <section class="py-5">
         <div class="container px-5">
             <h2 class="fw-bolder fs-5 mb-4">Semua Kegiatan</h2>
             <div class="row gx-5">
-                @foreach ($semuaKegiatan as $item)
+                @forelse ($semuaKegiatan as $item)
                 <div class="col-lg-4 mb-5">
                     <div class="card h-100 shadow border-0">
                         @if ($item->photo)
@@ -53,8 +57,12 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @empty
+
+                @endforelse
             </div>
         </div>
     </section>
+    @endif
+
 </div>
