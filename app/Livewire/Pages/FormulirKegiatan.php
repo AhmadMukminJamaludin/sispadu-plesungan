@@ -73,10 +73,11 @@ class FormulirKegiatan extends Component
                 $path = $this->photo->storePublicly('berkas-kegiatan', 'public');
                 $this->form['photo'] = $path;
             }
-            $this->form['slug'] = Str::slug($this->kegiatan['judul_kegiatan']);
+            $this->form['slug'] = Str::slug($this->form['judul_kegiatan']);
             if ($this->kegiatan->id) {
                 $this->kegiatan->update($this->form);
             } else {
+                $this->form['status'] = 'Diterbitkan';
                 $this->kegiatan->create($this->form);
             }
             $this->photo = null;
