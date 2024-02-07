@@ -6,6 +6,7 @@ use App\Models\Kegiatan;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class FormulirKegiatan extends Component
 {
@@ -46,7 +47,7 @@ class FormulirKegiatan extends Component
         ];
     }
 
-    #[Url] 
+    #[Url]
     public $params_kegiatan = '';
 
     public ?Kegiatan $kegiatan;
@@ -72,11 +73,13 @@ class FormulirKegiatan extends Component
                 $path = $this->photo->storePublicly('berkas-kegiatan', 'public');
                 $this->form['photo'] = $path;
             }
+            $this->form['slug'] = Str::slug($this->form['judul_kegiatan']);
             if ($this->kegiatan->id) {
                 $this->kegiatan->update($this->form);
             } else {
+                $this->form['status'] = 'Diterbitkan';
                 $this->kegiatan->create($this->form);
-            }            
+            }
             $this->photo = null;
             $this->form = [
                 'judul_kegiatan' => '',

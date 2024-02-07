@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class DaftarKegiatan extends Component
 {
-    public string $nama = '';
+    public string $judul = '';
 
     public function edit(Kegiatan $kegiatan)
     {
@@ -28,8 +28,8 @@ class DaftarKegiatan extends Component
     {
         return view('livewire.pages.daftar-kegiatan', [
             'semuaKegiatan' => Kegiatan::query()
-                ->when($this->nama, fn ($q) => $q->whereHas('createdBy', fn ($que) => $que->where('name', 'LIKE', ["%$this->nama%"])))
-                ->latest()
+                ->when($this->judul, fn ($q) => $q->where('judul_kegiatan', 'LIKE', ["%$this->judul%"]))
+                ->orderBy('judul_kegiatan', 'asc')
                 ->paginate(10),
         ])->layout('layouts.stisla');
     }

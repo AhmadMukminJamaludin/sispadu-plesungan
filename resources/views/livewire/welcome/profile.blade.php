@@ -27,11 +27,76 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-xxl-10">
                     <div class="text-center my-5">
-                        <h1 class="fw-bolder mb-3">MBANGUN DESO DESAKU MAJU</h1>
-                        <p class="lead fw-normal text-muted mb-4">Visi suatu ungkapan dari suatu niat yang luhur untuk memperbaiki dalam Penyelenggaraan
-                            Pemerintahan dan Pelaksanaan Pembangunan di Desa Plesungan baik secara individu maupun kelembagaan sehingga 6 (enam) tahun ke depan Desa Plesungan mengalami suatu perubahan yang lebih baik dan peningkatan kesejahteraan masyarakat dilihat dari segi ekonomi dengan dilandasi semangat kebersamaan dalam Penyelenggaraan
-                            Pemerintahan dan Pelaksanaan Pembangunan.</p>
+                        <h1 class="fw-bolder mb-3">DESA PLESUNGAN</h1>
+                        <p class="lead fw-normal text-muted mb-4">Desa Plesungan terletak di Kabupaten Karanganyar, Jawa Tengah, Indonesia. Desa ini dikenal karena keindahan alamnya yang memukau, dengan pemandangan sawah terasering yang hijau dan perbukitan yang menghijau di sekitarnya. Desa Plesungan juga memiliki suasana pedesaan yang tenang dan damai, menjadikannya tempat ideal untuk melarikan diri dari hiruk-pikuk kota..</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials section-->
+    <section class="py-5 bg-light">
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bolder">VISI & MISI</h2>
+                <p class="lead mb-0">Desa Plesungan</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-6">
+                    <!-- Testimonial 1-->
+                    <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="ms-4">
+                                    <h5 class="fw-bolder">VISI</h5>
+                                    <p class="mb-1" style="text-align: justify;">"MBANGUN DESO DESAKU MAJU"
+                                        Merupakan suatu niat yang luhur untuk memperbaiki dalam
+                                        Penyelenggaraan Permerintah dan Pelaksanaan Pembangunan di Desa
+                                        Plesungan baik secara individu maupun kelembagaan sehingga 6(enam) tahun ke depan Desa Plesungan mengalami suatu perubahan yang lebih baik dan peningkatkan kesejahteraan msyarakat dilihat dari segi ekonomi dengan landasi semangat kebersamaan dalam penelenggaraan pemerintahan dan Pelaksanaan Pembangunan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- Testimonial 2-->
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                <div class="ms-4">
+                                    <h5 class="fw-bolder">MISI</h5>
+                                    <ol class="mb-1 ps-3" style="text-align: justify;">
+                                        <li>
+                                            Melaksanaan penyelenggaraan pemerintah desa yang optimal dengan meningkatkan akuntabilitas kerja dan pelayanan yang prima kepada masyarakat.
+                                        </li>
+                                        <li>
+                                            Membina mengayomi dan melestarikan nilai-nilai budaya lokal, adat istiadat, toleransi, dan berkeyakinan kepada Tuhan Yang Maha Esa.
+                                        </li>
+                                        <li>
+                                            Mewujudkan pembangunan infrastruktur yang adil dan merata untuk meningkatkan kesejahteraan masyarakat.
+                                        </li>
+                                        <li>
+                                            Mewujudkan Desa Plesungan sebagai ikon wisata Kabupaten Karanganyar dengan berbasiskan pada potensi asli desa.
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section two-->
+    <section class="py-5">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ asset('startbootstrap/img/halaman-depan1.png') }}" alt="..." /></div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bolder">Sejarah Desa Plesungan</h2>
+                    <p class="lead fw-normal text-muted mb-0">Desa Plesungan adalah Desa Kolonialisasi yang datang dari beberapa daerah di Jawa Tengah dan Jawa Timur, dan terdiri dari beberapa daerah Desa Plesungan awalnya diambil dari nama kampung yaitu Kampung Plesungan dimana kampung Plesungan dulunya digunakan sebagai pusat penggilingan padi yang menggunakan Lesung Maka sebab itu desa mi disebut dengan Desa Plesungan.</p>
                 </div>
             </div>
         </div>
@@ -44,21 +109,21 @@
                 <p class="lead fw-normal text-muted mb-5">Pemerintahan Desa Plesungan Kecamatan Gondangrejo</p>
             </div>
             <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
-                <div class="col mb-5 mb-5 mb-xl-0">
+                <div class="col mb-5 mb-xl-0">
                     <div class="text-center">
                         <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
-                        <h5 class="fw-bolder">WALUYO</h5>
+                        <h5 class="fw-bolder">SUMARNO, S.H</h5>
                         <div class="fst-italic text-muted">Kepala Desa</div>
                     </div>
                 </div>
-                <div class="col mb-5 mb-5 mb-xl-0">
+                <div class="col mb-5 mb-xl-0">
                     <div class="text-center">
                         <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                         <h5 class="fw-bolder">YULIANTO</h5>
                         <div class="fst-italic text-muted">Sekretaris Desa</div>
                     </div>
                 </div>
-                <div class="col mb-5 mb-5 mb-sm-0">
+                <div class="col mb-5 mb-sm-0">
                     <div class="text-center">
                         <img class="img-fluid rounded-circle mb-4 px-4" src="https://dummyimage.com/150x150/ced4da/6c757d" alt="..." />
                         <h5 class="fw-bolder">SENEN RAHARJO</h5>

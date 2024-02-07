@@ -20,10 +20,12 @@ class Dashboard extends Component
         $aduanTerbaru = Aduan::query()
             ->doesntHave('respon')
             ->latest()
+            ->limit(4)
             ->get();
         return view('livewire.pages.dashboard', [
             'totalAduan' => count(Aduan::all()),
             'totalProses' => countAduan('Proses'),
+            'totalPengerjaan' => countAduan('Pengerjaan'),
             'totalSelesai' => countAduan('Selesai'),
             'totalTolak' => countAduan('Ditolak'),
             'aduanTerbaru' => $aduanTerbaru

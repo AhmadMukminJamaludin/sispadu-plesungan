@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <h4>Semua Kegiatan</h4>
                     <form class="card-header-form">
-                        <input type="text" name="search" class="form-control" wire:model.live="judul_kegiatan" placeholder="Cari judul kegiatan...">
+                        <input type="text" name="judul" class="form-control" wire:model.live="judul" placeholder="Cari judul kegiatan...">
                     </form>
                 </div>
                 <div class="card-body">
@@ -44,7 +44,7 @@
                                         @if ($item->status == 'Diterbitkan')
                                         <div class="badge badge-primary">{{ $item->status }}</div>
                                         @else
-                                        <div class="badge badge-warning">{{ $item->status }}</div>                                            
+                                        <div class="badge badge-warning">{{ $item->status }}</div>
                                         @endif
                                     </td>
                                     <td class="text-center" style="width: 75px;">
