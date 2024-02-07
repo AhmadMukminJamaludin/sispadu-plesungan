@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{ asset('startbootstrap/css/styles.css') }}">
 
         <!-- Scripts -->
-        {{-- @vite(['resources/js/app.js']) --}}
+        @vite(['resources/js/app.js'])
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
