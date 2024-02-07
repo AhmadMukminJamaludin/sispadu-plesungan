@@ -28,7 +28,7 @@
         gtag('config', 'UA-94034622-3');
     </script>
     <!-- Scripts -->
-    @vite(['resources/js/app.js'])
+    {{-- @vite(['resources/js/app.js']) --}}
     @stack('styles')
 
     <!-- Styles -->
