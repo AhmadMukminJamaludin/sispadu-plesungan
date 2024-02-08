@@ -64,6 +64,7 @@ class FormulirAduan extends Component
             ];
             $this->dispatch('alert-success', 'Berhasil Disimpan!');
         } catch (\Throwable $th) {
+            Log::error($th->getMessage());
             $this->dispatch('alert-error', $th->getMessage());
         }
     }
