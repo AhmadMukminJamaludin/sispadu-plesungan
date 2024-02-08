@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages;
 
 use App\Models\Aduan;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -49,8 +50,9 @@ class FormulirAduan extends Component
     {
         try {
             $this->validate();
+            Log::info($this->photo);
             if ($this->photo) {
-                $path = $this->photo->storePublicly('public/berkas-aduan', 'public');
+                $path = $this->photo->storePublicly('berkas-aduan', 'public');
                 $this->form['photo'] = $path;
             }
             $aduan = Aduan::create($this->form);

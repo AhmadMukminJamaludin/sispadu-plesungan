@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages;
 
 use App\Models\Kegiatan;
+use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -69,6 +70,7 @@ class FormulirKegiatan extends Component
     {
         try {
             $this->validate();
+            Log::info($this->photo);
             if ($this->photo) {
                 $path = $this->photo->storePublicly('berkas-kegiatan', 'public');
                 $this->form['photo'] = $path;
