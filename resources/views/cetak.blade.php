@@ -179,7 +179,7 @@
 
             <div class="signature">
                 <p style="text-decoration: underline; line-height: 1;">
-                    Waluyo
+                    Sumarno, S.H.
                 </p>
             </div>
         </div>
