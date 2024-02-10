@@ -25,7 +25,7 @@
                             <h2><a href="{{ route('detail-aduan', ['noTracking' => $item->no_tracking]) }}">{{ $item->judul_keluhan }}</a></h2>
                         </div>
                         <p>
-                            {!! Str::limit($item->keluhan, 30, '...') !!}
+                            {{ Str::limit($item->keluhan, 30, '...') }}
                         </p>
                         <div class="article-user">
                             <img alt="image" src="{{ asset('stisla/img/avatar/avatar-1.png') }}">
