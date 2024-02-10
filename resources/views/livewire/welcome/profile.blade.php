@@ -96,7 +96,7 @@
                 <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{ asset('startbootstrap/img/halaman-depan1.png') }}" alt="..." /></div>
                 <div class="col-lg-6">
                     <h2 class="fw-bolder">Sejarah Desa Plesungan</h2>
-                    <p class="lead fw-normal text-muted mb-0">Desa Plesungan adalah Desa Kolonialisasi yang datang dari beberapa daerah di Jawa Tengah dan Jawa Timur, dan terdiri dari beberapa daerah Desa Plesungan awalnya diambil dari nama kampung yaitu Kampung Plesungan dimana kampung Plesungan dulunya digunakan sebagai pusat penggilingan padi yang menggunakan Lesung Maka sebab itu desa mi disebut dengan Desa Plesungan.</p>
+                    <p class="lead fw-normal text-muted mb-0">Desa Plesungan adalah Desa Kolonialisasi yang datang dari beberapa daerah di Jawa Tengah dan Jawa Timur, dan terdiri dari beberapa daerah Desa Plesungan awalnya diambil dari nama kampung yaitu Kampung Plesungan dimana kampung Plesungan dulunya digunakan sebagai pusat penggilingan padi yang menggunakan Lesung Maka sebab itu desa ini disebut dengan Desa Plesungan.</p>
                 </div>
             </div>
         </div>
