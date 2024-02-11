@@ -52,6 +52,12 @@
                         </div>
                         <div class="row">
                             <div class="form-group col-12">
+                                <label>No. HP/Whatsapp</label>
+                                <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" wire:model="form.phone">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-12">
                                 <label>Bio</label>
                                 <textarea wire:ignore class="form-control" id="summernote">{{ $this->user->bio }}</textarea>
                             </div>
@@ -78,6 +84,12 @@
 
 @push('scripts')
 <script>
+    function onlyNumberKey(evt) {
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
     $(document).ready(function() {
         $('#summernote').summernote({
             tabsize: 2,

@@ -20,6 +20,7 @@ class Profile extends Component
 
         $this->form = array_merge([
             'email' => $user->email,
+            'phone' => $user->phone,
             'bio' => $user->bio
         ], $user->withoutRelations()->toArray());
     }
