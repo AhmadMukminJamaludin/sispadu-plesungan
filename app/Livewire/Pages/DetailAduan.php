@@ -53,10 +53,10 @@ class DetailAduan extends Component
             $respon = $this->aduan->respon()->firstWhere('status_respon', $this->formRespon['status_respon']);
             if (is_null($respon)) {
                 $this->aduan->respon()->create($this->formRespon);
-                $response = Http::get('http://103.117.57.212:3000/api', [
-                    'number' => '089522822321',
-                    'msg' => "{$this->formRespon['status_respon']}: {$this->formRespon['respon_text']} ~ Pesan dikirim melalui bot whatsapp",
-                ]);
+                // $response = Http::get('http://103.117.57.212:3000/api', [
+                //     'number' => '089522822321',
+                //     'msg' => "{$this->formRespon['status_respon']}: {$this->formRespon['respon_text']} ~ Pesan dikirim melalui bot whatsapp",
+                // ]);
             } else {
                 $respon->update($this->formRespon);
             }
